@@ -1,0 +1,5 @@
+# Wokwi Library List
+# Bibliotecas para ESP32 com HiveMQ MQTT e Servo Motor
+PubSubClient
+ESP32Servo
+

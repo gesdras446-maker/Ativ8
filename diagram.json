@@ -1,0 +1,156 @@
+{
+  "version": 1,
+  "author": "Esdras Landim e Lucas Henrique",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": -21.2,
+      "left": 192,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 201,
+      "left": 147,
+      "rotate": 90,
+      "attrs": {
+        "color": "green",
+        "xray": "1"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_verde",
+      "top": 63.6,
+      "left": 359,
+      "rotate": 90,
+      "attrs": {
+        "color": "green"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_vermelho",
+      "top": 159.6,
+      "left": 368.6,
+      "rotate": 90,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 119.15,
+      "left": 220.8,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 157.55,
+      "left": 220.8,
+      "attrs": {
+        "value": "220"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp:TX",
+      "$serialMonitor:RX",
+      "",
+      []
+    ],
+    [
+      "esp:RX",
+      "$serialMonitor:TX",
+      "",
+      []
+    ],
+    [
+      "servo1:GND",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "servo1:PWM",
+      "esp:13",
+      "yellow",
+      []
+    ],
+    [
+      "servo1:V+",
+      "esp:5V",
+      "red",
+      []
+    ],
+    [
+      "btn1:1.l",
+      "esp:12",
+      "blue",
+      []
+    ],
+    [
+      "btn1:1.r",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:14",
+      "r1:1",
+      "green",
+      []
+    ],
+    [
+      "r1:2",
+      "led_verde:A",
+      "green",
+      [
+        "h104.4"
+      ]
+    ],
+    [
+      "led_verde:C",
+      "esp:GND.3",
+      "black",
+      []
+    ],
+    [
+      "esp:27",
+      "r2:1",
+      "red",
+      [
+        "v38.4",
+        "h216.19"
+      ]
+    ],
+    [
+      "r2:2",
+      "led_vermelho:A",
+      "red",
+      []
+    ],
+    [
+      "led_vermelho:C",
+      "esp:GND.3",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {}
+}
